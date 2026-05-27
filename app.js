@@ -1,135 +1,163 @@
 const assets = {
-  logoWhite: "Marca Plano A/Marca Plano A_Versão Branca_Horizontal.png",
-  logoBlue: "Marca Plano A/Marca Plano A_Versão Azul_Horizontal.png",
-  ans: "Marca Plano A/ANS nº 424200.png",
-  odonto: "Marca Plano A/logoodonto.png",
-  select: "Marca Plano A/SELECT.png",
-  rede: "Marca Plano A/LOGO REDECORR-8.png",
   gocare: "Marca Plano A/GoCare_horizontal.png",
+  photos: {
+    family: "assets/gocare/doctor-document.jpg",
+    care: "assets/gocare/doctor-patient.jpg",
+    reception: "assets/gocare/healthcare-team.jpg",
+    telemed: "assets/gocare/telemedicine.jpg",
+    business: "assets/gocare/business-team.jpg",
+    doctor: "assets/gocare/doctor-laptop.jpg",
+    manaus: "assets/gocare/manaus-ponte-rio-negro.jpg",
+  },
+};
+
+const existingAssets = {
+  planoWhite: "Marca Plano A/Marca Plano A_Versão Branca_Horizontal.png",
+  planoBlue: "Marca Plano A/Marca Plano A_Versão Azul_Horizontal.png",
 };
 
 const icons = {
-  copy: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>',
-  users: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>',
-  shield: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path><path d="m9 12 2 2 4-5"></path></svg>',
-  chart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>',
-  file: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>',
+  heart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"></path></svg>',
+  family: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>',
+  building: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path><path d="M9 9v.01"></path><path d="M9 12v.01"></path><path d="M9 15v.01"></path><path d="M9 18v.01"></path></svg>',
+  user: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21a7 7 0 0 0-14 0"></path><circle cx="12" cy="8" r="5"></circle></svg>',
+  video: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 13 5 3V8l-5 3"></path><rect x="3" y="5" width="13" height="14" rx="2"></rect></svg>',
+  map: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>',
+  ambulance: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 17H5a2 2 0 0 1-2-2V7h11v10"></path><path d="M14 9h4l3 4v2a2 2 0 0 1-2 2h-1"></path><path d="M7 17a2 2 0 1 0 4 0"></path><path d="M16 17a2 2 0 1 0 4 0"></path><path d="M8 9v4"></path><path d="M6 11h4"></path></svg>',
+  pharmacy: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10.5 20.5 10-10a4.24 4.24 0 0 0-6-6l-10 10a4.24 4.24 0 0 0 6 6Z"></path><path d="m8.5 12.5 3 3"></path><path d="M14 8h4"></path><path d="M16 6v4"></path></svg>',
+  clock: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>',
+  check: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11-5-5"></path></svg>',
 };
 
+const tables = {
+  adhesionEnf: {
+    title: "Coletivos por adesão",
+    columns: ["Faixa etária", "Silver ENF - ANS 507133250", "Gold ENF - ANS 507131253"],
+    rows: [
+      ["0 a 18 anos", "R$ 284,25", "R$ 326,89"],
+      ["19 a 23 anos", "R$ 334,84", "R$ 385,07"],
+      ["24 a 28 anos", "R$ 366,17", "R$ 421,10"],
+      ["29 a 33 anos", "R$ 402,93", "R$ 462,64"],
+      ["34 a 38 anos", "R$ 436,02", "R$ 501,43"],
+      ["39 a 43 anos", "R$ 498,22", "R$ 573,45"],
+      ["44 a 48 anos", "R$ 667,26", "R$ 767,35"],
+      ["49 a 53 anos", "R$ 843,11", "R$ 969,58"],
+      ["54 a 58 anos", "R$ 1.028,62", "R$ 1.182,91"],
+      ["+59 anos", "R$ 1.464,62", "R$ 1.684,32"],
+    ],
+  },
+  adhesionApto: {
+    title: "Acomodação apartamento",
+    columns: ["Faixa etária", "Silver APTO - ANS 507129251", "Gold APTO - ANS 507132251"],
+    rows: [
+      ["0 a 18 anos", "R$ 350,93", "R$ 403,56"],
+      ["19 a 23 anos", "R$ 413,39", "R$ 475,40"],
+      ["24 a 28 anos", "R$ 452,06", "R$ 519,87"],
+      ["29 a 33 anos", "R$ 496,66", "R$ 571,16"],
+      ["34 a 38 anos", "R$ 538,30", "R$ 619,05"],
+      ["39 a 43 anos", "R$ 615,63", "R$ 707,97"],
+      ["44 a 48 anos", "R$ 823,78", "R$ 947,34"],
+      ["49 a 53 anos", "R$ 1.040,88", "R$ 1.197,01"],
+      ["54 a 58 anos", "R$ 1.269,90", "R$ 1.460,39"],
+      ["+59 anos", "R$ 1.808,18", "R$ 2.079,40"],
+    ],
+  },
+  pmeSmallEnf: {
+    title: "PME 1 a 29 vidas",
+    columns: ["Faixa etária", "Silver ENF - ANS 507126257", "Gold ENF - ANS 507124251"],
+    rows: [
+      ["0 a 18 anos", "R$ 247,05", "R$ 264,34"],
+      ["19 a 23 anos", "R$ 291,02", "R$ 311,40"],
+      ["24 a 28 anos", "R$ 318,25", "R$ 340,53"],
+      ["29 a 33 anos", "R$ 349,65", "R$ 374,13"],
+      ["34 a 38 anos", "R$ 378,96", "R$ 405,49"],
+      ["39 a 43 anos", "R$ 433,40", "R$ 463,74"],
+      ["44 a 48 anos", "R$ 579,94", "R$ 620,53"],
+      ["49 a 53 anos", "R$ 732,78", "R$ 784,07"],
+      ["54 a 58 anos", "R$ 894,01", "R$ 956,59"],
+      ["+59 anos", "R$ 1.272,96", "R$ 1.362,06"],
+    ],
+  },
+  pmeSmallApto: {
+    title: "PME 1 a 29 vidas",
+    columns: ["Faixa etária", "Silver APTO - ANS 507130255", "Gold APTO - ANS 507125259"],
+    rows: [
+      ["0 a 18 anos", "R$ 308,81", "R$ 330,43"],
+      ["19 a 23 anos", "R$ 363,78", "R$ 389,25"],
+      ["24 a 28 anos", "R$ 397,82", "R$ 425,66"],
+      ["29 a 33 anos", "R$ 437,06", "R$ 467,66"],
+      ["34 a 38 anos", "R$ 473,70", "R$ 506,86"],
+      ["39 a 43 anos", "R$ 541,75", "R$ 579,67"],
+      ["44 a 48 anos", "R$ 724,92", "R$ 775,67"],
+      ["49 a 53 anos", "R$ 915,97", "R$ 980,09"],
+      ["54 a 58 anos", "R$ 1.117,51", "R$ 1.195,74"],
+      ["+59 anos", "R$ 1.591,19", "R$ 1.702,58"],
+    ],
+  },
+  pmeLargeEnf: {
+    title: "PME 30 a 99 vidas",
+    columns: ["Faixa etária", "Silver ENF - ANS 507126257", "Gold ENF - ANS 507124251"],
+    rows: [
+      ["0 a 18 anos", "R$ 234,70", "R$ 251,13"],
+      ["19 a 23 anos", "R$ 276,47", "R$ 295,83"],
+      ["24 a 28 anos", "R$ 302,34", "R$ 323,50"],
+      ["29 a 33 anos", "R$ 332,17", "R$ 355,42"],
+      ["34 a 38 anos", "R$ 360,02", "R$ 385,22"],
+      ["39 a 43 anos", "R$ 411,73", "R$ 440,55"],
+      ["44 a 48 anos", "R$ 550,94", "R$ 589,51"],
+      ["49 a 53 anos", "R$ 696,14", "R$ 744,87"],
+      ["54 a 58 anos", "R$ 849,31", "R$ 908,76"],
+      ["+59 anos", "R$ 1.209,31", "R$ 1.293,96"],
+    ],
+  },
+  pmeLargeApto: {
+    title: "PME 30 a 99 vidas",
+    columns: ["Faixa etária", "Silver APTO - ANS 507130255", "Gold APTO - ANS 507125259"],
+    rows: [
+      ["0 a 18 anos", "R$ 293,37", "R$ 313,91"],
+      ["19 a 23 anos", "R$ 345,59", "R$ 369,78"],
+      ["24 a 28 anos", "R$ 377,92", "R$ 404,38"],
+      ["29 a 33 anos", "R$ 415,21", "R$ 444,27"],
+      ["34 a 38 anos", "R$ 450,02", "R$ 481,52"],
+      ["39 a 43 anos", "R$ 514,66", "R$ 550,69"],
+      ["44 a 48 anos", "R$ 688,68", "R$ 736,88"],
+      ["49 a 53 anos", "R$ 870,17", "R$ 931,08"],
+      ["54 a 58 anos", "R$ 1.061,64", "R$ 1.135,95"],
+      ["+59 anos", "R$ 1.511,63", "R$ 1.617,45"],
+    ],
+  },
+};
+
+const networkPlaceholders = [
+  "Rede credenciada",
+  "Hospital",
+  "Pronto atendimento",
+  "Clínica",
+  "Laboratorio",
+  "Diagnostico",
+];
+
 const slides = [
-  {
-    kicker: "Apresentação institucional",
-    title: "Plano A",
-    body: "Administração de planos de saúde com clareza, proximidade e controle.",
-    visual: "hero",
-    metrics: [
-      ["Cuidado", "Relacionamento humano em cada ponto de contato."],
-      ["Controle", "Dados, prazos, documentos e governança."],
-      ["Confiança", "Comunicação simples para decisões melhores."],
-    ],
-  },
-  {
-    kicker: "01 / Contexto",
-    title: "Saúde coletiva é um mercado que exige gestão.",
-    body: "Planos coletivos conectam pessoas jurídicas, beneficiários, operadoras e prestadores. Onde há escala, há necessidade de governança e comunicação.",
-    visual: "market",
-  },
-  {
-    kicker: "02 / Papel",
-    title: "Quem administra não substitui quem opera.",
-    body: "A Plano A ocupa a camada administrativa e de relacionamento. A assistência e a rede do plano permanecem sob responsabilidade da operadora.",
-    visual: "compare",
-  },
-  {
-    kicker: "03 / Atuação",
-    title: "A camada operacional entre contrato, cuidado e decisão.",
-    body: "Uma administradora pode organizar a rotina invisível do plano: contratos, vidas, rede, cobranças, reajustes, atendimento e informação executiva.",
-    visual: "pillars",
-    pillars: [
-      ["01", "Vidas", "Inclusões, exclusões, alterações cadastrais, elegibilidade e movimentações."],
-      ["02", "Rede", "Apoio para encontrar caminhos de atendimento e reduzir ruído operacional."],
-      ["03", "Custos", "Leitura de uso, cobranças, renovações e sinais de atenção."],
-      ["04", "Evidências", "Documentos, histórico e rastreabilidade para governança."],
-    ],
-  },
-  {
-    kicker: "04 / Operação",
-    title: "Um fluxo simples para uma operação complexa.",
-    body: "A operação deixa de depender de memória individual e passa a seguir status, responsáveis, evidências e prazos.",
-    visual: "timeline",
-    rows: [
-      ["Entrada", "Solicitação registrada", "Dados mínimos, responsável, prazo esperado e documentação vinculada."],
-      ["Análise", "Critérios e pendências", "Validação de contrato, elegibilidade, plano e impactos administrativos."],
-      ["Execução", "Movimentação acompanhada", "Status claro para reduzir retrabalho e perda de prazo."],
-      ["Evidência", "Histórico consultável", "Registro do pedido, andamento e conclusão para governança."],
-    ],
-  },
-  {
-    kicker: "05 / Pessoas",
-    title: "A experiência aparece no detalhe do atendimento.",
-    body: "A melhor administração é percebida quando a pessoa encontra orientação rápida, entende seus caminhos e se sente acompanhada antes do problema crescer.",
-    visual: "care",
-    cards: [
-      ["Atendimento", "Escuta ativa, triagem e direcionamento com linguagem simples."],
-      ["Rede", "Apoio para encontrar prestadores, especialidades e canais corretos."],
-      ["Autorizações", "Acompanhamento de solicitações e pendências com transparência."],
-      ["Comunicação", "Mensagens objetivas para reduzir dúvidas repetidas e desalinhamento."],
-    ],
-  },
-  {
-    kicker: "06 / Empresas",
-    title: "RH e liderança enxergam o benefício com mais clareza.",
-    body: "Uma camada de gestão ajuda a ordenar movimentações, acompanhar temas recorrentes e preparar conversas de renovação com informações organizadas.",
-    visual: "data",
-  },
-  {
-    kicker: "07 / Transparência",
-    title: "Reajuste pede informação, negociação e registro.",
-    body: "Nos planos coletivos, a leitura de custos e condições contratuais é parte central da boa administração. Informação organizada melhora a qualidade da negociação.",
-    visual: "reajuste",
-  },
-  {
-    kicker: "08 / Governança",
-    title: "Processos consistentes protegem relações.",
-    body: "Cadastro correto, comunicação documentada e clareza de responsabilidades reduzem atrito entre empresa, beneficiário, administradora e operadora.",
-    visual: "pillars",
-    pillars: [
-      ["01", "Cadastro", "Dados atualizados para movimentações, elegibilidade e comunicação."],
-      ["02", "Contrato", "Regras compreendidas, prazos observados e documentos organizados."],
-      ["03", "Atendimento", "Histórico dos pedidos e orientação coerente ao beneficiário."],
-      ["04", "ANS", "Atuação conectada às regras da saúde suplementar aplicáveis."],
-    ],
-  },
-  {
-    kicker: "09 / Ecossistema",
-    title: "Rede, parceiros e operação conectados em uma leitura única.",
-    body: "O ecossistema de saúde funciona melhor quando cada participante sabe seu papel: administradora, empresa, operadoras, prestadores, odonto e redes parceiras.",
-    visual: "network",
-  },
-  {
-    kicker: "10 / Implantação",
-    title: "Começar bem é organizar antes de comunicar.",
-    body: "Uma implantação consistente alinha contrato, elegibilidade, canais, responsáveis e rotina de acompanhamento desde o primeiro ciclo.",
-    visual: "timeline",
-    rows: [
-      ["Diagnóstico", "Entender o cenário", "Perfil do grupo, contratos, vigências, canais e necessidades prioritárias."],
-      ["Configuração", "Organizar a operação", "Responsáveis, documentos, fluxos de movimentação e pontos de contato."],
-      ["Comunicação", "Orientar públicos", "Empresa e beneficiários recebem informação clara sobre seus caminhos."],
-      ["Acompanhamento", "Medir e evoluir", "Rotina de revisão, pendências e temas de atenção."],
-    ],
-  },
-  {
-    kicker: "11 / Fundamentos",
-    title: "Responsabilidade também é dizer o que cada parte faz.",
-    body: "As informações regulatórias deste material seguem as orientações públicas da Agência Nacional de Saúde Suplementar.",
-    visual: "sources",
-  },
-  {
-    kicker: "Plano A",
-    title: "O Plano A é administrar saúde com método e proximidade.",
-    body: "Mais clareza para a empresa. Mais orientação para o beneficiário. Mais confiança para todo o ecossistema.",
-    visual: "closing",
-  },
+  { type: "cover", nav: "Capa" },
+  { type: "purpose", nav: "Propósito" },
+  { type: "about", nav: "GoCare" },
+  { type: "audiences", nav: "Publicos" },
+  { type: "telemedicine", nav: "Telemedicina" },
+  { type: "productsIntro", nav: "Produtos" },
+  { type: "regionProducts", nav: "Campinas", title: "Campinas", products: [["Green", "Enfermaria", "green"], ["Gold", "Enfermaria", "gold"], ["Platinum", "Apartamento", "black"]] },
+  { type: "regionProducts", nav: "Baixada", title: "Baixada Santista", products: [["Litoral", "Enfermaria", "pink"], ["Litoral Especial", "Apartamento", "black"]] },
+  { type: "spProducts", nav: "São Paulo" },
+  { type: "manaus", nav: "Manaus" },
+  { type: "regionProducts", nav: "Manaus produtos", title: "Manaus", products: [["Silver", "Enfermaria ou Apartamento", "silver"], ["Gold", "Enfermaria ou Apartamento", "gold"], ["Black", "Enfermaria ou Apartamento", "black", "Em breve"]], city: "manaus" },
+  { type: "network", nav: "Silver", plan: "Silver", tone: "silver" },
+  { type: "network", nav: "Gold", plan: "Gold", tone: "gold" },
+  { type: "prices", nav: "Adesão", title: "Planos Coletivos por Adesão", tables: [tables.adhesionEnf, tables.adhesionApto], footer: "planoa" },
+  { type: "prices", nav: "PME 1-29", title: "Planos Coletivos Empresariais - PME (1 a 29 vidas)", tables: [tables.pmeSmallEnf, tables.pmeSmallApto], footer: "gocare" },
+  { type: "prices", nav: "PME 30-99", title: "Planos Coletivos Empresariais - PME (30 a 99 vidas)", tables: [tables.pmeLargeEnf, tables.pmeLargeApto], footer: "gocare" },
+  { type: "benefitsIntro", nav: "Beneficios" },
+  { type: "benefits", nav: "Cards" },
+  { type: "business", nav: "Empresario" },
+  { type: "closing", nav: "Fim" },
 ];
 
 let currentIndex = getIndexFromHash();
@@ -140,128 +168,128 @@ const totalLabel = document.querySelector("[data-total]");
 const progress = document.querySelector("[data-progress]");
 const thumbs = document.querySelector("[data-thumbs]");
 
-function baseChrome() {
+function logo(src, alt, className = "") {
+  return `<img class="${className}" src="${src}" alt="${alt}" onerror="this.hidden=true">`;
+}
+
+function brandRow() {
   return `
     <header class="brand-row">
-      <img class="logo" src="${assets.logoWhite}" alt="Plano A - Administradora de Planos de Saúde">
-      <div class="seal-row">
-        <span>Plano A / administradora</span>
-        <img src="${assets.ans}" alt="ANS número 424200">
+      ${logo(assets.gocare, "GoCare Saúde", "brand-logo brand-logo--gocare")}
+      <div class="brand-right">
+        <span>ANS - nº 42268-1</span>
+        ${logo(existingAssets.planoBlue, "Plano A", "brand-logo brand-logo--planoa")}
       </div>
     </header>
   `;
 }
 
-function sectionLabel(slide) {
-  return slide.kicker ? `<p class="eyebrow"><span></span>${slide.kicker}</p>` : "";
+function visualPanel(kind, label) {
+  const photo = assets.photos[kind] || assets.photos.doctor;
+  return `
+    <div class="image-panel image-panel--${kind}" role="img" aria-label="${label}">
+      <img class="image-panel__photo" src="${photo}" alt="${label}" loading="lazy" onerror="this.hidden=true">
+      <div class="image-panel__caption">${label}</div>
+    </div>
+  `;
 }
 
-function renderHero(slide) {
+function productCard([name, caption, tone, flag]) {
   return `
-    <section class="slide-grid">
-      <div class="slide-copy">
-        ${sectionLabel(slide)}
-        <h1>${slide.title}</h1>
-        <p>${slide.body}</p>
-        <div class="metric-strip">
-          ${slide.metrics.map(([value, label]) => `<div class="metric"><strong>${value}</strong><span>${label}</span></div>`).join("")}
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="dashboard-head">
-          <div class="dashboard-title">Painel de Administração</div>
-          <div class="status-chip">Operação ativa</div>
-        </div>
-        <div class="flow-board">
-          ${[
-            [icons.users, "Beneficiários", "Movimentações, elegibilidade e atendimento.", "360"],
-            [icons.file, "Contratos", "Regras, vigências, documentos e renovações.", "OK"],
-            [icons.shield, "Conformidade", "Histórico organizado para auditoria e controle.", "ANS"],
-            [icons.chart, "Indicadores", "Leitura executiva para RH e diretoria.", "Live"],
-          ].map(([icon, title, text, value]) => `
-            <div class="flow-item">
-              <span class="flow-icon">${icon}</span>
-              <div><h3>${title}</h3><p>${text}</p></div>
-              <span class="flow-value">${value}</span>
-            </div>
+    <article class="product-card product-card--${tone}">
+      ${flag ? `<em>${flag}</em>` : ""}
+      <strong>${name}</strong>
+      <span>${caption}</span>
+    </article>
+  `;
+}
+
+function priceTable(table) {
+  return `
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <caption>${table.title}</caption>
+        <thead>
+          <tr>${table.columns.map((column) => `<th>${column}</th>`).join("")}</tr>
+        </thead>
+        <tbody>
+          ${table.rows.map((row) => `
+            <tr>${row.map((cell, index) => `<td data-label="${table.columns[index]}">${cell}</td>`).join("")}</tr>
           `).join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function logoGrid(highlight = false) {
+  return `
+    <div class="logo-grid">
+      ${networkPlaceholders.map((name, index) => `
+        <div class="network-logo ${highlight && index === 0 ? "is-highlighted" : ""}">
+          ${highlight && index === 0 ? "Hospital Adventista de Manaus" : name}
         </div>
+      `).join("")}
+    </div>
+  `;
+}
+
+function renderCover() {
+  return `
+    <section class="content-grid content-grid--cover">
+      <div class="copy-block">
+        <h1>Sua saúde e um plano de agora!</h1>
+        <div class="logo-pair">
+          ${logo(assets.gocare, "GoCare Saúde")}
+          ${logo(existingAssets.planoBlue, "Plano A")}
+        </div>
+        <p class="ans-line">ANS - nº 42268-1</p>
+      </div>
+      ${visualPanel("family", "Cuidado humano para famílias e empresas")}
+    </section>
+  `;
+}
+
+function renderPurpose() {
+  return `
+    <section class="split-full">
+      ${visualPanel("care", "Saúde simples desde o início")}
+      <div class="pink-panel">
+        <p>Nosso intuito e ampliar o acesso a <mark>saúde</mark> e <mark>desburocratizar</mark> este processo desde o seu início.</p>
       </div>
     </section>
   `;
 }
 
-function renderMarket(slide) {
+function renderAbout() {
   return `
-    <section class="slide-grid slide-grid--wide">
-      <div class="slide-copy">
-        ${sectionLabel(slide)}
-        <h2>${slide.title}</h2>
-        <p>${slide.body}</p>
+    <section class="content-grid content-grid--about">
+      <div class="copy-block">
+        <h2>A GoCare</h2>
+        <p>Atendendo grande parte do interior do Estado de São Paulo (Região Metropolitana de Campinas), São Paulo (capital), Baixada Santista e também Manaus, a GoCare apresenta uma ampla rede credenciada para atendimento de seus beneficiários, com preços justos e adequados.</p>
       </div>
-      <div class="panel market-panel">
-        <div class="market-stat">
-          <strong>+80%</strong>
-          <p>dos beneficiários de planos de saúde no Brasil estão em planos coletivos.</p>
-        </div>
-        <div class="market-notes">
-          <p>Empresarial <span>vínculo com a pessoa jurídica contratante</span></p>
-          <p>Por adesão <span>vínculo profissional, classista ou setorial</span></p>
-          <p>Gestão <span>informação para contratantes e beneficiários</span></p>
-        </div>
-        <small>Fonte: ANS, Painel dos Contratantes de Planos Coletivos, publicado em 08/05/2025.</small>
+      <div class="institutional-card">
+        ${visualPanel("reception", "Atendimento institucional")}
       </div>
     </section>
   `;
 }
 
-function renderCompare(slide) {
+function renderAudiences() {
+  const items = [
+    ["Para família", icons.family],
+    ["Para empresa", icons.building],
+    ["Para você", icons.user],
+  ];
   return `
-    <section class="slide-grid slide-grid--wide">
-      <div class="slide-copy">
-        ${sectionLabel(slide)}
-        <h2>${slide.title}</h2>
-        <p>${slide.body}</p>
-      </div>
-      <div class="comparison">
-        <article class="role-card role-card--accent">
-          <h3>Administradora</h3>
-          <p>Representa o contratante e executa trabalhos administrativos previstos no contrato.</p>
-          <ul>
-            <li>Cadastro e boletos</li>
-            <li>Negociação de reajustes</li>
-            <li>Alterações na rede e acesso</li>
-          </ul>
-        </article>
-        <article class="role-card">
-          <h3>Operadora</h3>
-          <p>É responsável pelo plano e pela assistência oferecida ao beneficiário.</p>
-          <ul>
-            <li>Rede assistencial</li>
-            <li>Hospitais e profissionais</li>
-            <li>Serviços do plano junto à ANS</li>
-          </ul>
-        </article>
-        <small>Responsabilidades resumidas conforme orientação pública da ANS.</small>
-      </div>
-    </section>
-  `;
-}
-
-function renderPillars(slide) {
-  return `
-    <section class="slide-grid slide-grid--wide">
-      <div class="slide-copy">
-        ${sectionLabel(slide)}
-        <h2>${slide.title}</h2>
-        <p>${slide.body}</p>
-      </div>
-      <div class="pillars">
-        ${slide.pillars.map(([number, title, text]) => `
-          <article class="pillar">
-            <div class="pillar-number">${number}</div>
-            <h3>${title}</h3>
-            <p>${text}</p>
+    <section class="center-stack">
+      <h2>A GoCare e...</h2>
+      <div class="audience-grid">
+        ${items.map(([title, icon], index) => `
+          <article>
+            <div class="audience-photo audience-photo--${index + 1}"></div>
+            ${icon}
+            <strong>${title}</strong>
           </article>
         `).join("")}
       </div>
@@ -269,47 +297,77 @@ function renderPillars(slide) {
   `;
 }
 
-function renderTimeline(slide) {
+function renderTelemedicine() {
   return `
-    <section class="slide-grid">
-      <div class="slide-copy">
-        ${sectionLabel(slide)}
-        <h2>${slide.title}</h2>
-        <p>${slide.body}</p>
-      </div>
-      <div class="panel panel--light timeline">
-        ${(slide.rows || [
-          ["Entrada", "Solicitação registrada", "A demanda nasce com dados mínimos, responsável, prazo esperado e documentação vinculada."],
-          ["Análise", "Critérios e pendências", "A equipe valida regras do contrato, elegibilidade, carências, plano e impacto financeiro."],
-          ["Execução", "Movimentação acompanhada", "Cada etapa tem status claro para reduzir retrabalho e evitar perda de prazo."],
-          ["Evidência", "Histórico consultável", "A operação deixa rastro: o que foi pedido, quem aprovou e quando foi concluído."],
-        ]).map(([stage, title, text]) => `
-          <div class="timeline-row">
-            <strong>${stage}</strong>
-            <div><h3>${title}</h3><p>${text}</p></div>
-          </div>
-        `).join("")}
+    <section class="content-grid content-grid--telemed">
+      ${visualPanel("telemed", "Telemedicina com atendimento próximo")}
+      <div class="white-card telemed-card">
+        <h2>Telemedicina</h2>
+        <p>Com a telemedicina, você pode:</p>
+        <ul>
+          <li>Consultar um médico sem sair de casa;</li>
+          <li>Receber orientações medicas imediatas;</li>
+          <li>Obter prescrições e encaminhamentos quando necessário.</li>
+        </ul>
+        <div class="dark-note">
+          <strong>Pronto atendimento</strong>
+          <span>Clínica Medica e Pediatria. Consultas eletivas em diversas especialidades.</span>
+        </div>
+        <small>Consulte se esse serviço está disponível para o seu plano.</small>
       </div>
     </section>
   `;
 }
 
-function renderCare(slide) {
+function renderProductsIntro() {
   return `
-    <section class="slide-grid">
-      <div class="slide-copy">
-        ${sectionLabel(slide)}
-        <h2>${slide.title}</h2>
-        <p>${slide.body}</p>
+    <section class="full-bleed full-bleed--products">
+      <div>
+        <h2>Produtos</h2>
+        <span></span>
+        <p>Feitos para você!</p>
       </div>
-      <div class="split-panel">
-        ${slide.cards.map(([title, text], index) => `
-          <article class="care-card">
-            ${[icons.users, icons.shield, icons.file, icons.chart][index]}
-            <h3>${title}</h3>
-            <p>${text}</p>
-          </article>
-        `).join("")}
+    </section>
+  `;
+}
+
+function renderRegionProducts(slide) {
+  return `
+    <section class="region-layout">
+      <aside class="city-rail city-rail--${slide.city || "default"}"></aside>
+      <div class="region-content">
+        <p class="section-subtitle">Produtos</p>
+        <h2>${slide.title}</h2>
+        <div class="product-grid ${slide.products.length === 4 ? "product-grid--four" : ""}">
+          ${slide.products.map(productCard).join("")}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderSpProducts() {
+  return renderRegionProducts({
+    title: "São Paulo",
+    products: [
+      ["SP1", "Zona Oeste", "orange"],
+      ["SP2", "Zona Norte", "sp2"],
+      ["SP3", "Zona Leste", "gold"],
+      ["SP5", "Zona Leste, Oeste, Norte, Sul e Centro, além de algumas cidades da Grande São Paulo", "black"],
+    ],
+  });
+}
+
+function renderManaus() {
+  return `
+    <section class="split-full split-full--manaus">
+      <div class="manaus-photo">
+        <img src="${assets.photos.manaus}" alt="Ponte Rio Negro em Manaus" loading="lazy">
+      </div>
+      <div class="pink-panel pink-panel--manaus">
+        <div class="location-badge">${icons.map}<span>Manaus</span></div>
+        <h2><span>Chegamos</span> Manaus</h2>
+        <p>A GoCare nasce na cidade com um propósito claro: tornar o cuidado com a saúde mais simples, próximo e humano.</p>
       </div>
     </section>
   `;
@@ -317,156 +375,138 @@ function renderCare(slide) {
 
 function renderNetwork(slide) {
   return `
-    <section class="slide-grid slide-grid--wide">
-      <div class="slide-copy">
-        ${sectionLabel(slide)}
-        <h2>${slide.title}</h2>
-        <p>${slide.body}</p>
-      </div>
-      <div class="panel panel--light network">
-        <div class="network-map">
-          <span class="node"></span><span class="node"></span><span class="node"></span><span class="node"></span><span class="node"></span>
+    <section class="network-slide">
+      <aside class="city-rail city-rail--manaus"></aside>
+      <div class="network-content">
+        <div class="network-head">
+          ${productCard([slide.plan, "Enfermaria ou Apartamento", slide.tone])}
+          <div>
+            <h2>${slide.plan}</h2>
+            <p>O Plano ${slide.plan} conta com rede credenciada em Manaus, oferecendo acomodações em quarto coletivo ou privativo.</p>
+          </div>
         </div>
-        <div class="network-content">
-          <h3>Ecossistema integrado</h3>
-          <p>Operadoras, rede credenciada, odonto, parceiros e empresa cliente precisam de informação consistente para que o cuidado aconteça no tempo certo.</p>
-        </div>
+        <h3>Rede de atendimento</h3>
+        ${logoGrid(slide.plan === "Gold")}
       </div>
     </section>
   `;
 }
 
-function renderData(slide) {
+function renderPrices(slide) {
   return `
-    <section class="slide-grid">
-      <div class="slide-copy">
-        ${sectionLabel(slide)}
-        <h2>${slide.title}</h2>
-        <p>${slide.body}</p>
+    <section class="prices-slide">
+      <h2>${slide.title}</h2>
+      <div class="tables-grid">
+        ${slide.tables.map(priceTable).join("")}
       </div>
-      <div class="panel panel--light table-card">
-        <h3>Leitura executiva mensal</h3>
-        ${[
-          ["Movimentação cadastral", "Entrada / saída", "Controlar"],
-          ["Sinistralidade percebida", "Tendência", "Acompanhar"],
-          ["Solicitações em aberto", "SLA", "Priorizar"],
-          ["Dúvidas recorrentes", "Tema", "Educar"],
-          ["Próximas renovações", "Prazo", "Antecipar"],
-        ].map(([name, type, status]) => `
-          <div class="data-row">
-            <strong>${name}</strong>
-            <span>${type}</span>
-            <span class="tag">${status}</span>
-          </div>
+      <footer class="table-brand">
+        ${slide.footer === "planoa" ? logo(existingAssets.planoBlue, "Plano A") : logo(assets.gocare, "GoCare Saúde")}
+        ${slide.footer === "gocare" ? `<span>ANS - nº 42268-1</span>` : ""}
+      </footer>
+    </section>
+  `;
+}
+
+function renderBenefitsIntro() {
+  return `
+    <section class="full-bleed full-bleed--benefits">
+      <div>
+        <h2>Beneficios</h2>
+        <span></span>
+        <p>Para clientes GoCare</p>
+      </div>
+    </section>
+  `;
+}
+
+function renderBenefits() {
+  const benefits = [
+    [icons.ambulance, "Atendimento emergêncial em todo Brasil", ["Rede Abramge", "Cobertura nacional para urgência e emergência"], "pink"],
+    [icons.pharmacy, "Desconto nas principais redes de farmácia", ["Pague Menos", "Drogasil", "Raia", "Drogaria"], "dark"],
+    [icons.clock, "Carência 24h", ["Após a data de vigência", "Consultas", "Exames simples", "Pronto-socorro"], "pink"],
+  ];
+  return `
+    <section class="center-stack center-stack--light">
+      <p class="section-subtitle">Para clientes GoCare</p>
+      <h2>Beneficios</h2>
+      <div class="benefit-grid">
+        ${benefits.map(([icon, title, lines, tone]) => `
+          <article class="benefit-card benefit-card--${tone}">
+            ${icon}
+            <h3>${title}</h3>
+            ${lines.map((line) => `<p>${line}</p>`).join("")}
+          </article>
         `).join("")}
       </div>
     </section>
   `;
 }
 
-function renderReajuste(slide) {
-  const facts = `CONTRATO COLETIVO
-
-> Reajuste segue as regras contratuais aplicáveis.
-> Com 30 ou mais beneficiários, cláusulas são estipuladas
-  por livre negociação entre contratante e operadora
-  ou administradora contratada.
-> A justificativa do percentual proposto deve ser
-  fundamentada pela operadora e disponibilizada
-  à pessoa jurídica contratante para conferência.`;
+function renderBusiness() {
   return `
-    <section class="slide-grid">
-      <div class="slide-copy">
-        ${sectionLabel(slide)}
-        <h2>${slide.title}</h2>
-        <p>${slide.body}</p>
+    <section class="split-full split-full--business">
+      ${visualPanel("business", "Relacionamento empresarial")}
+      <div class="pink-panel">
+        <div class="corner-badge">Para o empresário</div>
+        <h2>Relacionamento empresarial</h2>
+        <p>Nosso compromisso vai além da contratação do plano. Oferecemos um suporte pós-venda dedicado, auxiliando na implantação e atendendo a todas as demandas administrativas que possam surgir.</p>
+        <p>Nossa equipe esta sempre pronta para garantir uma experiência tranquila e satisfatória para sua empresa.</p>
       </div>
-      <div class="panel code-card">
-        <div class="code-head">
-          <span>transparência / reajuste coletivo</span>
+    </section>
+  `;
+}
+
+function renderClosing() {
+  return `
+    <section class="content-grid content-grid--cover">
+      <div class="copy-block">
+        <h2>Sua saúde e um plano de agora!</h2>
+        <div class="logo-pair">
+          ${logo(assets.gocare, "GoCare Saúde")}
+          ${logo(existingAssets.planoBlue, "Plano A")}
         </div>
-        <pre><code>${facts}</code></pre>
-        <p class="terminal-source">Fonte: ANS, Reajuste anual de planos coletivos, atualizado em 09/08/2024.</p>
+        <p class="ans-line">ANS - nº 42268-1</p>
       </div>
+      ${visualPanel("family", "GoCare + Plano A")}
     </section>
   `;
 }
 
-function renderSources(slide) {
-  return `
-    <section class="slide-grid slide-grid--wide">
-      <div class="slide-copy">
-        ${sectionLabel(slide)}
-        <h2>${slide.title}</h2>
-        <p>${slide.body}</p>
-      </div>
-      <div class="panel sources-panel">
-        <a href="https://www.gov.br/ans/pt-br/assuntos/contratacao-e-troca-de-plano/dicas-de-como-escolher-um-plano-de-saude-1/formas-de-contratacao-de-planos-de-saude-1/planos-coletivos-por-adesao-e-empresariais" target="_blank" rel="noreferrer">
-          <strong>Planos coletivos por adesão e empresariais</strong>
-          <span>Papéis da administradora e da operadora</span>
-        </a>
-        <a href="https://www.gov.br/ans/pt-br/assuntos/contratante/painel-dos-contratantes" target="_blank" rel="noreferrer">
-          <strong>Painel dos Contratantes</strong>
-          <span>Contexto de planos coletivos e dados do setor</span>
-        </a>
-        <a href="https://www.gov.br/ans/pt-br/assuntos/consumidor/reajuste-variacao-de-mensalidade/reajuste-anual-de-planos-coletivos" target="_blank" rel="noreferrer">
-          <strong>Reajuste anual de planos coletivos</strong>
-          <span>Contratação, negociação e transparência</span>
-        </a>
-        <p class="source-note">Conteúdo institucional; condições de contratação e serviços dependem de instrumento contratual.</p>
-      </div>
-    </section>
-  `;
-}
-
-function renderClosing(slide) {
-  return `
-    <section class="closing slide-copy">
-      <div>
-        ${sectionLabel(slide)}
-        <img class="logo" src="${assets.logoWhite}" alt="Plano A">
-        <h2>${slide.title}</h2>
-        <p>${slide.body}</p>
-        <div class="brand-stack">
-          <div class="partner-grid">
-            <div class="partner-logo"><img src="${assets.odonto}" alt="OdontoGroup"></div>
-            <div class="partner-logo"><img src="${assets.rede}" alt="Redecorr"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  `;
-}
-
-function renderVisual(slide) {
+function renderSlide(slide) {
   const renderers = {
-    hero: renderHero,
-    market: renderMarket,
-    compare: renderCompare,
-    pillars: renderPillars,
-    timeline: renderTimeline,
-    care: renderCare,
+    cover: renderCover,
+    purpose: renderPurpose,
+    about: renderAbout,
+    audiences: renderAudiences,
+    telemedicine: renderTelemedicine,
+    productsIntro: renderProductsIntro,
+    regionProducts: renderRegionProducts,
+    spProducts: renderSpProducts,
+    manaus: renderManaus,
     network: renderNetwork,
-    data: renderData,
-    reajuste: renderReajuste,
-    sources: renderSources,
+    prices: renderPrices,
+    benefitsIntro: renderBenefitsIntro,
+    benefits: renderBenefits,
+    business: renderBusiness,
     closing: renderClosing,
   };
 
-  return renderers[slide.visual](slide);
+  return renderers[slide.type](slide);
 }
 
 function renderDeck() {
   deck.innerHTML = slides.map((slide, index) => `
     <article class="slide ${index === currentIndex ? "is-active" : ""}" data-slide="${index}">
-      ${slide.visual === "closing" ? "" : baseChrome()}
-      ${renderVisual(slide)}
+      ${["purpose", "productsIntro", "benefitsIntro"].includes(slide.type) ? "" : brandRow()}
+      ${renderSlide(slide)}
     </article>
   `).join("");
 
   totalLabel.textContent = String(slides.length).padStart(2, "0");
   thumbs.innerHTML = slides.map((slide, index) => `
-    <button class="thumb ${index === currentIndex ? "is-active" : ""}" type="button" aria-label="Ir para slide ${index + 1}: ${slide.title}" data-thumb="${index}"></button>
+    <button class="thumb ${index === currentIndex ? "is-active" : ""}" type="button" aria-label="Ir para ${slide.nav}" data-thumb="${index}">
+      <span>${String(index + 1).padStart(2, "0")}</span>
+    </button>
   `).join("");
 
   updateState();
@@ -474,9 +514,7 @@ function renderDeck() {
 
 function getIndexFromHash() {
   const value = Number.parseInt(window.location.hash.replace("#", ""), 10);
-  if (Number.isFinite(value) && value >= 1 && value <= slides.length) {
-    return value - 1;
-  }
+  if (Number.isFinite(value) && value >= 1 && value <= slides.length) return value - 1;
   return 0;
 }
 
@@ -501,20 +539,14 @@ function goTo(index) {
   updateState();
 }
 
-document.addEventListener("click", async (event) => {
+document.addEventListener("click", (event) => {
   const previous = event.target.closest("[data-prev]");
   const next = event.target.closest("[data-next]");
   const thumb = event.target.closest("[data-thumb]");
-  const copy = event.target.closest("[data-copy]");
 
   if (previous) goTo(currentIndex - 1);
   if (next) goTo(currentIndex + 1);
   if (thumb) goTo(Number(thumb.dataset.thumb));
-  if (copy) {
-    await navigator.clipboard.writeText(decodeURIComponent(copy.dataset.copy));
-    copy.setAttribute("aria-label", "Comandos copiados");
-    setTimeout(() => copy.setAttribute("aria-label", "Copiar comandos"), 1400);
-  }
 });
 
 document.addEventListener("keydown", (event) => {
