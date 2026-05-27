@@ -18,6 +18,7 @@ const icons = {
 
 const slides = [
   {
+    kicker: "Apresentação institucional",
     title: "Plano A",
     body: "Administração de planos de saúde com clareza, proximidade e controle.",
     visual: "hero",
@@ -28,8 +29,21 @@ const slides = [
     ],
   },
   {
+    kicker: "01 / Contexto",
+    title: "Saúde coletiva é um mercado que exige gestão.",
+    body: "Planos coletivos conectam pessoas jurídicas, beneficiários, operadoras e prestadores. Onde há escala, há necessidade de governança e comunicação.",
+    visual: "market",
+  },
+  {
+    kicker: "02 / Papel",
+    title: "Quem administra não substitui quem opera.",
+    body: "A Plano A ocupa a camada administrativa e de relacionamento. A assistência e a rede do plano permanecem sob responsabilidade da operadora.",
+    visual: "compare",
+  },
+  {
+    kicker: "03 / Atuação",
     title: "A camada operacional entre contrato, cuidado e decisão.",
-    body: "Uma administradora organiza a rotina invisível do plano: contratos, vidas, rede, cobranças, autorizações, atendimento e informação executiva.",
+    body: "Uma administradora pode organizar a rotina invisível do plano: contratos, vidas, rede, cobranças, reajustes, atendimento e informação executiva.",
     visual: "pillars",
     pillars: [
       ["01", "Vidas", "Inclusões, exclusões, alterações cadastrais, elegibilidade e movimentações."],
@@ -39,12 +53,20 @@ const slides = [
     ],
   },
   {
+    kicker: "04 / Operação",
     title: "Um fluxo simples para uma operação complexa.",
     body: "A operação deixa de depender de memória individual e passa a seguir status, responsáveis, evidências e prazos.",
     visual: "timeline",
+    rows: [
+      ["Entrada", "Solicitação registrada", "Dados mínimos, responsável, prazo esperado e documentação vinculada."],
+      ["Análise", "Critérios e pendências", "Validação de contrato, elegibilidade, plano e impactos administrativos."],
+      ["Execução", "Movimentação acompanhada", "Status claro para reduzir retrabalho e perda de prazo."],
+      ["Evidência", "Histórico consultável", "Registro do pedido, andamento e conclusão para governança."],
+    ],
   },
   {
-    title: "Uma experiência melhor para o beneficiário.",
+    kicker: "05 / Pessoas",
+    title: "A experiência aparece no detalhe do atendimento.",
     body: "A melhor administração é percebida quando a pessoa encontra orientação rápida, entende seus caminhos e se sente acompanhada antes do problema crescer.",
     visual: "care",
     cards: [
@@ -55,21 +77,55 @@ const slides = [
     ],
   },
   {
+    kicker: "06 / Empresas",
+    title: "RH e liderança enxergam o benefício com mais clareza.",
+    body: "Uma camada de gestão ajuda a ordenar movimentações, acompanhar temas recorrentes e preparar conversas de renovação com informações organizadas.",
+    visual: "data",
+  },
+  {
+    kicker: "07 / Transparência",
+    title: "Reajuste pede informação, negociação e registro.",
+    body: "Nos planos coletivos, a leitura de custos e condições contratuais é parte central da boa administração. Informação organizada melhora a qualidade da negociação.",
+    visual: "reajuste",
+  },
+  {
+    kicker: "08 / Governança",
+    title: "Processos consistentes protegem relações.",
+    body: "Cadastro correto, comunicação documentada e clareza de responsabilidades reduzem atrito entre empresa, beneficiário, administradora e operadora.",
+    visual: "pillars",
+    pillars: [
+      ["01", "Cadastro", "Dados atualizados para movimentações, elegibilidade e comunicação."],
+      ["02", "Contrato", "Regras compreendidas, prazos observados e documentos organizados."],
+      ["03", "Atendimento", "Histórico dos pedidos e orientação coerente ao beneficiário."],
+      ["04", "ANS", "Atuação conectada às regras da saúde suplementar aplicáveis."],
+    ],
+  },
+  {
+    kicker: "09 / Ecossistema",
     title: "Rede, parceiros e operação conectados em uma leitura única.",
     body: "O ecossistema de saúde funciona melhor quando cada participante sabe seu papel: administradora, empresa, operadoras, prestadores, odonto e redes parceiras.",
     visual: "network",
   },
   {
-    title: "Indicadores para agir antes do custo virar surpresa.",
-    body: "A administração moderna traduz movimentação, uso e pendências em leitura executiva: o que aconteceu, o que está em aberto e onde agir primeiro.",
-    visual: "data",
+    kicker: "10 / Implantação",
+    title: "Começar bem é organizar antes de comunicar.",
+    body: "Uma implantação consistente alinha contrato, elegibilidade, canais, responsáveis e rotina de acompanhamento desde o primeiro ciclo.",
+    visual: "timeline",
+    rows: [
+      ["Diagnóstico", "Entender o cenário", "Perfil do grupo, contratos, vigências, canais e necessidades prioritárias."],
+      ["Configuração", "Organizar a operação", "Responsáveis, documentos, fluxos de movimentação e pontos de contato."],
+      ["Comunicação", "Orientar públicos", "Empresa e beneficiários recebem informação clara sobre seus caminhos."],
+      ["Acompanhamento", "Medir e evoluir", "Rotina de revisão, pendências e temas de atenção."],
+    ],
   },
   {
-    title: "Publicação simples, apresentação com cara de produto.",
-    body: "O deck é um site estático: abre no navegador, funciona no GitHub Pages e mantém navegação, cópia de comandos e URL por slide.",
-    visual: "code",
+    kicker: "11 / Fundamentos",
+    title: "Responsabilidade também é dizer o que cada parte faz.",
+    body: "As informações regulatórias deste material seguem as orientações públicas da Agência Nacional de Saúde Suplementar.",
+    visual: "sources",
   },
   {
+    kicker: "Plano A",
     title: "O Plano A é administrar saúde com método e proximidade.",
     body: "Mais clareza para a empresa. Mais orientação para o beneficiário. Mais confiança para todo o ecossistema.",
     visual: "closing",
@@ -96,10 +152,15 @@ function baseChrome() {
   `;
 }
 
+function sectionLabel(slide) {
+  return slide.kicker ? `<p class="eyebrow"><span></span>${slide.kicker}</p>` : "";
+}
+
 function renderHero(slide) {
   return `
     <section class="slide-grid">
       <div class="slide-copy">
+        ${sectionLabel(slide)}
         <h1>${slide.title}</h1>
         <p>${slide.body}</p>
         <div class="metric-strip">
@@ -130,10 +191,68 @@ function renderHero(slide) {
   `;
 }
 
+function renderMarket(slide) {
+  return `
+    <section class="slide-grid slide-grid--wide">
+      <div class="slide-copy">
+        ${sectionLabel(slide)}
+        <h2>${slide.title}</h2>
+        <p>${slide.body}</p>
+      </div>
+      <div class="panel market-panel">
+        <div class="market-stat">
+          <strong>+80%</strong>
+          <p>dos beneficiários de planos de saúde no Brasil estão em planos coletivos.</p>
+        </div>
+        <div class="market-notes">
+          <p>Empresarial <span>vínculo com a pessoa jurídica contratante</span></p>
+          <p>Por adesão <span>vínculo profissional, classista ou setorial</span></p>
+          <p>Gestão <span>informação para contratantes e beneficiários</span></p>
+        </div>
+        <small>Fonte: ANS, Painel dos Contratantes de Planos Coletivos, publicado em 08/05/2025.</small>
+      </div>
+    </section>
+  `;
+}
+
+function renderCompare(slide) {
+  return `
+    <section class="slide-grid slide-grid--wide">
+      <div class="slide-copy">
+        ${sectionLabel(slide)}
+        <h2>${slide.title}</h2>
+        <p>${slide.body}</p>
+      </div>
+      <div class="comparison">
+        <article class="role-card role-card--accent">
+          <h3>Administradora</h3>
+          <p>Representa o contratante e executa trabalhos administrativos previstos no contrato.</p>
+          <ul>
+            <li>Cadastro e boletos</li>
+            <li>Negociação de reajustes</li>
+            <li>Alterações na rede e acesso</li>
+          </ul>
+        </article>
+        <article class="role-card">
+          <h3>Operadora</h3>
+          <p>É responsável pelo plano e pela assistência oferecida ao beneficiário.</p>
+          <ul>
+            <li>Rede assistencial</li>
+            <li>Hospitais e profissionais</li>
+            <li>Serviços do plano junto à ANS</li>
+          </ul>
+        </article>
+        <small>Responsabilidades resumidas conforme orientação pública da ANS.</small>
+      </div>
+    </section>
+  `;
+}
+
 function renderPillars(slide) {
   return `
     <section class="slide-grid slide-grid--wide">
       <div class="slide-copy">
+        ${sectionLabel(slide)}
         <h2>${slide.title}</h2>
         <p>${slide.body}</p>
       </div>
@@ -154,16 +273,17 @@ function renderTimeline(slide) {
   return `
     <section class="slide-grid">
       <div class="slide-copy">
+        ${sectionLabel(slide)}
         <h2>${slide.title}</h2>
         <p>${slide.body}</p>
       </div>
       <div class="panel panel--light timeline">
-        ${[
+        ${(slide.rows || [
           ["Entrada", "Solicitação registrada", "A demanda nasce com dados mínimos, responsável, prazo esperado e documentação vinculada."],
           ["Análise", "Critérios e pendências", "A equipe valida regras do contrato, elegibilidade, carências, plano e impacto financeiro."],
           ["Execução", "Movimentação acompanhada", "Cada etapa tem status claro para reduzir retrabalho e evitar perda de prazo."],
           ["Evidência", "Histórico consultável", "A operação deixa rastro: o que foi pedido, quem aprovou e quando foi concluído."],
-        ].map(([stage, title, text]) => `
+        ]).map(([stage, title, text]) => `
           <div class="timeline-row">
             <strong>${stage}</strong>
             <div><h3>${title}</h3><p>${text}</p></div>
@@ -178,6 +298,7 @@ function renderCare(slide) {
   return `
     <section class="slide-grid">
       <div class="slide-copy">
+        ${sectionLabel(slide)}
         <h2>${slide.title}</h2>
         <p>${slide.body}</p>
       </div>
@@ -198,6 +319,7 @@ function renderNetwork(slide) {
   return `
     <section class="slide-grid slide-grid--wide">
       <div class="slide-copy">
+        ${sectionLabel(slide)}
         <h2>${slide.title}</h2>
         <p>${slide.body}</p>
       </div>
@@ -218,6 +340,7 @@ function renderData(slide) {
   return `
     <section class="slide-grid">
       <div class="slide-copy">
+        ${sectionLabel(slide)}
         <h2>${slide.title}</h2>
         <p>${slide.body}</p>
       </div>
@@ -241,20 +364,56 @@ function renderData(slide) {
   `;
 }
 
-function renderCode(slide) {
-  const command = `git add .\ngit commit -m "Add Plano A institutional presentation"\ngit push origin main\n\n# No GitHub Pages:\n# Settings > Pages > Deploy from a branch > main / root`;
+function renderReajuste(slide) {
+  const facts = `CONTRATO COLETIVO
+
+> Reajuste segue as regras contratuais aplicáveis.
+> Com 30 ou mais beneficiários, cláusulas são estipuladas
+  por livre negociação entre contratante e operadora
+  ou administradora contratada.
+> A justificativa do percentual proposto deve ser
+  fundamentada pela operadora e disponibilizada
+  à pessoa jurídica contratante para conferência.`;
   return `
     <section class="slide-grid">
       <div class="slide-copy">
+        ${sectionLabel(slide)}
         <h2>${slide.title}</h2>
         <p>${slide.body}</p>
       </div>
       <div class="panel code-card">
         <div class="code-head">
-          <span>publicação no GitHub Pages</span>
-          <button class="copy-btn" type="button" aria-label="Copiar comandos" data-copy="${encodeURIComponent(command)}">${icons.copy}</button>
+          <span>transparência / reajuste coletivo</span>
         </div>
-        <pre><code>${command}</code></pre>
+        <pre><code>${facts}</code></pre>
+        <p class="terminal-source">Fonte: ANS, Reajuste anual de planos coletivos, atualizado em 09/08/2024.</p>
+      </div>
+    </section>
+  `;
+}
+
+function renderSources(slide) {
+  return `
+    <section class="slide-grid slide-grid--wide">
+      <div class="slide-copy">
+        ${sectionLabel(slide)}
+        <h2>${slide.title}</h2>
+        <p>${slide.body}</p>
+      </div>
+      <div class="panel sources-panel">
+        <a href="https://www.gov.br/ans/pt-br/assuntos/contratacao-e-troca-de-plano/dicas-de-como-escolher-um-plano-de-saude-1/formas-de-contratacao-de-planos-de-saude-1/planos-coletivos-por-adesao-e-empresariais" target="_blank" rel="noreferrer">
+          <strong>Planos coletivos por adesão e empresariais</strong>
+          <span>Papéis da administradora e da operadora</span>
+        </a>
+        <a href="https://www.gov.br/ans/pt-br/assuntos/contratante/painel-dos-contratantes" target="_blank" rel="noreferrer">
+          <strong>Painel dos Contratantes</strong>
+          <span>Contexto de planos coletivos e dados do setor</span>
+        </a>
+        <a href="https://www.gov.br/ans/pt-br/assuntos/consumidor/reajuste-variacao-de-mensalidade/reajuste-anual-de-planos-coletivos" target="_blank" rel="noreferrer">
+          <strong>Reajuste anual de planos coletivos</strong>
+          <span>Contratação, negociação e transparência</span>
+        </a>
+        <p class="source-note">Conteúdo institucional; condições de contratação e serviços dependem de instrumento contratual.</p>
       </div>
     </section>
   `;
@@ -264,12 +423,13 @@ function renderClosing(slide) {
   return `
     <section class="closing slide-copy">
       <div>
+        ${sectionLabel(slide)}
         <img class="logo" src="${assets.logoWhite}" alt="Plano A">
         <h2>${slide.title}</h2>
         <p>${slide.body}</p>
         <div class="brand-stack">
           <div class="partner-grid">
-            <div class="partner-logo"><img src="${assets.odonto}" alt="Plano A Odonto"></div>
+            <div class="partner-logo"><img src="${assets.odonto}" alt="OdontoGroup"></div>
             <div class="partner-logo"><img src="${assets.rede}" alt="Redecorr"></div>
           </div>
         </div>
@@ -281,12 +441,15 @@ function renderClosing(slide) {
 function renderVisual(slide) {
   const renderers = {
     hero: renderHero,
+    market: renderMarket,
+    compare: renderCompare,
     pillars: renderPillars,
     timeline: renderTimeline,
     care: renderCare,
     network: renderNetwork,
     data: renderData,
-    code: renderCode,
+    reajuste: renderReajuste,
+    sources: renderSources,
     closing: renderClosing,
   };
 
